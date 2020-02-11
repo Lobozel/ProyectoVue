@@ -7,12 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <ul v-if="mostrar">
+        <ul v-show="mostrar">
             <li v-for="(show, index) in tvshows" :key="index">
                 <strong>{{show.name}}</strong> ({{show.seasons}} Temporadas)
             </li>
         </ul>
-        <div v-else>
+        <div v-hide>
             No hay datos
         </div>
     </div>
@@ -21,7 +21,7 @@
         const app = new Vue({
             el: '#app',
             data: {
-                mostrar: false,
+                mostrar: true,
                 tvshows: [
                     { name: 'Gintama', seasons: 5},
                     { name: 'Hunter x Hunter', seasons: 1},
